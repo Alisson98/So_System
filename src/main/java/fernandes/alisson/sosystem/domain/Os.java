@@ -46,6 +46,7 @@ public class Os implements Serializable {
 
     public Os(Integer id, Priority priority, Status status, String obs, Technician technician, Client client) {
         this.id = id;
+        this.setOpenDate(LocalDateTime.now());
         this.priority = (priority == null) ? 0 : priority.getCode();
         this.status = (status == null) ? 0 : status.getCode();
         this.obs = obs;
