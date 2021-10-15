@@ -1,20 +1,39 @@
 package fernandes.alisson.sosystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import fernandes.alisson.sosystem.domain.enuns.Priority;
 import fernandes.alisson.sosystem.domain.enuns.Status;
 import lombok.Data;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-public class Os {
+@Entity
+public class Os implements Serializable {
+    private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime openDate;
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime closingDate;
+
     private Integer priority;
     private Integer  status;
     private String obs;
+
+    @ManyToOne
+    @JoinColumn(name = "technician_id")
     private Technician technician;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 
     public Os() {
