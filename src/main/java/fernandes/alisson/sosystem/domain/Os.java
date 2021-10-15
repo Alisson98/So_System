@@ -3,7 +3,9 @@ package fernandes.alisson.sosystem.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import fernandes.alisson.sosystem.domain.enuns.Priority;
 import fernandes.alisson.sosystem.domain.enuns.Status;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -42,9 +44,8 @@ public class Os implements Serializable {
         this.setStatus(Status.OPEN);
     }
 
-    public Os(Integer id, LocalDateTime openDate, Priority priority, Status status, String obs, Technician technician, Client client) {
+    public Os(Integer id, Priority priority, Status status, String obs, Technician technician, Client client) {
         this.id = id;
-        this.setOpenDate(LocalDateTime.now());
         this.priority = (priority == null) ? 0 : priority.getCode();
         this.status = (status == null) ? 0 : status.getCode();
         this.obs = obs;
