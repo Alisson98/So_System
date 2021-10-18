@@ -1,5 +1,6 @@
 package fernandes.alisson.sosystem.application.controllers.TechnicianController;
 
+import fernandes.alisson.sosystem.data.datasources.dtos.TechnicianDTO;
 import fernandes.alisson.sosystem.domain.model.Technician;
 import fernandes.alisson.sosystem.domain.usecases.Technician.GetById.GetByIdUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class TechnicianController {
     private GetByIdUseCase getByIdUseCase;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Technician> findById(@PathVariable Long id){
-        Technician obj = getByIdUseCase.execute(id);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<TechnicianDTO> findById(@PathVariable Long id){
+        TechnicianDTO objDTO = new TechnicianDTO(getByIdUseCase.execute(id));
+        return ResponseEntity.ok().body(objDTO);
     }
 }
