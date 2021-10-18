@@ -1,5 +1,6 @@
-package fernandes.alisson.sosystem.domain;
+package fernandes.alisson.sosystem.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -11,17 +12,16 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Entity(name = "TB_CLIENT")
-public class Client extends Person implements Serializable {
+@Entity(name = "TB_TECHNICIAN")
+public class Technician extends Person implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    public Client() {
+    public Technician() {
     }
-
-    public Client(Long id, String name, @CPF String cpf, String phone) {
+    public Technician(Long id, String name, @CPF String cpf, String phone) {
         super(id, name, cpf, phone);
     }
-
-    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    @OneToMany(mappedBy = "technician")
     private List<Os> osList= new ArrayList<>();
 }

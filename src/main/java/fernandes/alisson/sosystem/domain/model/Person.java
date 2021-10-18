@@ -1,4 +1,4 @@
-package fernandes.alisson.sosystem.domain;
+package fernandes.alisson.sosystem.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

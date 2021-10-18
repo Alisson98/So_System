@@ -1,4 +1,4 @@
-package fernandes.alisson.sosystem.domain.enuns;
+package fernandes.alisson.sosystem.domain.model.enuns;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

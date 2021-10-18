@@ -1,11 +1,9 @@
-package fernandes.alisson.sosystem.domain;
+package fernandes.alisson.sosystem.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import fernandes.alisson.sosystem.domain.enuns.Priority;
-import fernandes.alisson.sosystem.domain.enuns.Status;
-import lombok.AllArgsConstructor;
+import fernandes.alisson.sosystem.domain.model.enuns.Priority;
+import fernandes.alisson.sosystem.domain.model.enuns.Status;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
