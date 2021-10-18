@@ -3,6 +3,7 @@ package fernandes.alisson.sosystem.application.controllers.TechnicianController;
 import fernandes.alisson.sosystem.application.dtos.TechnicianDTO;
 import fernandes.alisson.sosystem.domain.model.Technician;
 import fernandes.alisson.sosystem.domain.usecases.Technician.CreateUseCase.CreateUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.DeleteUseCase.DeleteUseCase;
 import fernandes.alisson.sosystem.domain.usecases.Technician.GetAllUseCase.GetAllUseCase;
 import fernandes.alisson.sosystem.domain.usecases.Technician.GetByIdUseCase.GetByIdUseCase;
 import fernandes.alisson.sosystem.domain.usecases.Technician.UpdateUseCase.UpdateUseCase;
@@ -32,6 +33,9 @@ public class TechnicianController {
     @Autowired
     private UpdateUseCase updateUseCase;
 
+    @Autowired
+    private DeleteUseCase deleteUseCase;
+
     @GetMapping("/{id}")
     public ResponseEntity<TechnicianDTO> findById(@PathVariable Long id){
         TechnicianDTO objDTO = new TechnicianDTO(getByIdUseCase.execute(id));
@@ -58,6 +62,11 @@ public class TechnicianController {
     public ResponseEntity<TechnicianDTO> update(@PathVariable Long id, @Valid @RequestBody TechnicianDTO objDTO) {
         TechnicianDTO obj = new TechnicianDTO(updateUseCase.execute(id, objDTO));
         return ResponseEntity.ok().body(obj);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        deleteUseCase.execute(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
