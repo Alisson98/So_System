@@ -1,5 +1,6 @@
 package fernandes.alisson.sosystem.application.exeptions;
 
+import fernandes.alisson.sosystem.domain.usecases.exceptions.DataIntegrityViolationException;
 import fernandes.alisson.sosystem.domain.usecases.exceptions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,14 @@ public class ControllerExceptionHandler {
                 HttpStatus.NOT_FOUND.value()
                 , e.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<StandardError> dataIntegrityViolation(DataIntegrityViolationException e){
+        StandardError error = new StandardError(System.currentTimeMillis(),
+                HttpStatus.BAD_REQUEST.value()
+                , e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 
 }

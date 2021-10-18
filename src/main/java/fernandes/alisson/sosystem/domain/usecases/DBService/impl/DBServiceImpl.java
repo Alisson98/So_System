@@ -31,7 +31,7 @@ public class DBServiceImpl implements DBService {
     @Override
     public void instancyDB (){
         Technician t1 = new Technician(null, "Marcos","654.432.120-60", "(99) 99999999");
-        Technician t2 = new Technician(null, "Alisson","654.432.120-60", "(99) 99999999");
+        Technician t2 = new Technician(null, "Alisson","295.151.220-15", "(99) 99999999");
         Client c1 = new Client(null, "Betina Campos", "881.259.350-02", "(99) 99999999" );
         Os os1= new Os(null, Priority.HIGH, Status.PROGRESS, "Teste create OS", t1, c1);
 
