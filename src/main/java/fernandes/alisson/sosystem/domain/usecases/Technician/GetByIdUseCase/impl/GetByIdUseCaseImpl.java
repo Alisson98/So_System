@@ -1,8 +1,9 @@
-package fernandes.alisson.sosystem.domain.usecases.Technician.GetById.impl;
+package fernandes.alisson.sosystem.domain.usecases.Technician.GetByIdUseCase.impl;
 
+import fernandes.alisson.sosystem.domain.usecases.exceptions.ObjectNotFoundException;
 import fernandes.alisson.sosystem.data.repositories.TechnicianRepository;
 import fernandes.alisson.sosystem.domain.model.Technician;
-import fernandes.alisson.sosystem.domain.usecases.Technician.GetById.GetByIdUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.GetByIdUseCase.GetByIdUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,6 @@ public class GetByIdUseCaseImpl implements GetByIdUseCase {
     @Override
     public Technician execute(Long id) {
         Optional<Technician> obj = repository.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Object not Found! ID:" + id + " Type: " + Technician.class.getName()));
     }
 }

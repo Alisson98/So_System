@@ -1,4 +1,4 @@
-package fernandes.alisson.sosystem.domain.usecases.Technician.GetById;
+package fernandes.alisson.sosystem.domain.usecases.Technician.GetByIdUseCase;
 
 import fernandes.alisson.sosystem.domain.model.Technician;
 

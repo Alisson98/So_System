@@ -1,4 +1,4 @@
-package fernandes.alisson.sosystem.data.datasources.dtos;
+package fernandes.alisson.sosystem.application.dtos;
 
 import fernandes.alisson.sosystem.domain.model.Technician;
 import lombok.Getter;
