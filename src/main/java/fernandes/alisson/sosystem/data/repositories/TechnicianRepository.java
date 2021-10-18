@@ -11,4 +11,5 @@ public interface TechnicianRepository extends JpaRepository<Technician, Long> {
 
     @Query("SELECT obj FROM TB_TECHNICIAN obj WHERE obj.cpf =:cpf")
     Technician findByCPF(@Param("cpf") String cpf);
+
 }

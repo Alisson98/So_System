@@ -4,8 +4,8 @@ import fernandes.alisson.sosystem.application.dtos.TechnicianDTO;
 import fernandes.alisson.sosystem.domain.model.Technician;
 import fernandes.alisson.sosystem.domain.usecases.Technician.CreateUseCase.CreateUseCase;
 import fernandes.alisson.sosystem.domain.usecases.Technician.GetAllUseCase.GetAllUseCase;
-import fernandes.alisson.sosystem.domain.usecases.Technician.GetByCpfUseCase.GetByCpfUseCase;
 import fernandes.alisson.sosystem.domain.usecases.Technician.GetByIdUseCase.GetByIdUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.UpdateUseCase.UpdateUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,7 +30,7 @@ public class TechnicianController {
     private CreateUseCase createUseCase;
 
     @Autowired
-    private GetByCpfUseCase getByCpfUseCase;
+    private UpdateUseCase updateUseCase;
 
     @GetMapping("/{id}")
     public ResponseEntity<TechnicianDTO> findById(@PathVariable Long id){
@@ -53,6 +52,12 @@ public class TechnicianController {
                 .buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
 
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TechnicianDTO> update(@PathVariable Long id, @Valid @RequestBody TechnicianDTO objDTO) {
+        TechnicianDTO obj = new TechnicianDTO(updateUseCase.execute(id, objDTO));
+        return ResponseEntity.ok().body(obj);
     }
 
 }
