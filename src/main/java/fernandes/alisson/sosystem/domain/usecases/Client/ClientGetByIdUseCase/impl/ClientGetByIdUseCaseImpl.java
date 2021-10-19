@@ -2,7 +2,7 @@ package fernandes.alisson.sosystem.domain.usecases.Client.ClientGetByIdUseCase.i
 
 import fernandes.alisson.sosystem.data.repositories.ClientRepository;
 import fernandes.alisson.sosystem.domain.model.Client;
-import fernandes.alisson.sosystem.domain.usecases.Client.ClientGetByIdUseCase.GetByIdUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Client.ClientGetByIdUseCase.ClientGetByIdUseCase;
 import fernandes.alisson.sosystem.domain.usecases.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class GetByIdUseCaseImpl implements GetByIdUseCase {
+public class ClientGetByIdUseCaseImpl implements ClientGetByIdUseCase {
 
     @Autowired
     private ClientRepository repository;

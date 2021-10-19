@@ -4,6 +4,6 @@ import fernandes.alisson.sosystem.domain.model.Technician;
 
 import java.util.List;
 
-public interface GetAllUseCase {
+public interface TechnicianGetAllUseCase {
     public List<Technician> execute();
 }

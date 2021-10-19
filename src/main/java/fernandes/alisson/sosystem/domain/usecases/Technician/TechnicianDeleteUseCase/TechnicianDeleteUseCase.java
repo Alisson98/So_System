@@ -1,3 +1,3 @@
 package fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianDeleteUseCase;
 
-public interface DeleteUseCase { public void execute(Long Id); }
+public interface TechnicianDeleteUseCase { public void execute(Long Id); }

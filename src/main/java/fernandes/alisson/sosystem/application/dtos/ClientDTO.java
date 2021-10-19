@@ -1,6 +1,6 @@
 package fernandes.alisson.sosystem.application.dtos;
 
-import fernandes.alisson.sosystem.domain.model.Technician;
+import fernandes.alisson.sosystem.domain.model.Client;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
@@ -28,7 +28,7 @@ public class ClientDTO implements Serializable {
     public ClientDTO() {
     }
 
-    public ClientDTO(Technician obj) {
+    public ClientDTO(Client obj) {
         this.id = obj.getId();
         this.name = obj.getName();
         this.cpf = obj.getCpf();

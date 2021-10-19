@@ -2,6 +2,6 @@ package fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianGetByIdU
 
 import fernandes.alisson.sosystem.domain.model.Technician;
 
-public interface GetByIdUseCase {
+public interface TechnicianGetByIdUseCase {
     public Technician execute(Long id);
 }

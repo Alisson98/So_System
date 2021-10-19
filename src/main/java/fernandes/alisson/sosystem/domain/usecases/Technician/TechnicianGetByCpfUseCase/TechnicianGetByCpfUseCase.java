@@ -1,8 +1,8 @@
-package fernandes.alisson.sosystem.domain.usecases.Client.ClientCreateUseCase;
+package fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianGetByCpfUseCase;
 
 import fernandes.alisson.sosystem.application.dtos.TechnicianDTO;
 import fernandes.alisson.sosystem.domain.model.Technician;
 
-public interface CreateUseCase {
+public interface TechnicianGetByCpfUseCase {
     public Technician execute(TechnicianDTO objDTO);
 }
