@@ -3,6 +3,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import fernandes.alisson.sosystem.domain.model.Os;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -19,7 +21,10 @@ public class OsDTO implements Serializable {
     private LocalDateTime closingDate;
     private Integer priority;
     private Integer  status;
+
+    @NotEmpty(message = "mandatory obs field")
     private String obs;
+
     private Long technician;
     private Long client;
 
