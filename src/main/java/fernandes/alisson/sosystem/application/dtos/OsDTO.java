@@ -1,0 +1,39 @@
+package fernandes.alisson.sosystem.application.dtos;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import fernandes.alisson.sosystem.domain.model.Os;
+import lombok.Getter;
+import lombok.Setter;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+public class OsDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+
+    private Long id;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private LocalDateTime openDate;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private LocalDateTime closingDate;
+    private Integer priority;
+    private Integer  status;
+    private String obs;
+    private Long technician;
+    private Long client;
+
+    public OsDTO() {
+    }
+
+    public OsDTO(Os obj) {
+        this.id = obj.getId();
+        this.openDate = obj.getOpenDate();
+        this.closingDate = obj.getClosingDate();
+        this.priority = obj.getPriority().getCode();
+        this.status = obj.getStatus().getCode();
+        this.obs = obj.getObs();
+        this.technician = obj.getTechnician().getId();
+        this.client = obj.getClient().getId();
+    }
+}

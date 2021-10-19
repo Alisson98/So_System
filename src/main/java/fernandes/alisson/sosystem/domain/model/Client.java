@@ -12,7 +12,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Entity(name = "TB_CLIENT")
+@Entity
 public class Client extends Person implements Serializable {
     private static final long serialVersionUID = 1L;
 

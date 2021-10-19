@@ -16,7 +16,7 @@ public class Os implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime openDate;
@@ -42,7 +42,7 @@ public class Os implements Serializable {
         this.setStatus(Status.OPEN);
     }
 
-    public Os(Integer id, Priority priority, Status status, String obs, Technician technician, Client client) {
+    public Os(Long id, Priority priority, Status status, String obs, Technician technician, Client client) {
         this.id = id;
         this.setOpenDate(LocalDateTime.now());
         this.priority = (priority == null) ? 0 : priority.getCode();
