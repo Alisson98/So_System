@@ -1,8 +1,8 @@
-package fernandes.alisson.sosystem.domain.usecases.OS.OsGetByIdUseCase.impl;
+package fernandes.alisson.sosystem.domain.usecases.Os.OsGetByIdUseCase.impl;
 
 import fernandes.alisson.sosystem.data.repositories.OsRepository;
 import fernandes.alisson.sosystem.domain.model.Os;
-import fernandes.alisson.sosystem.domain.usecases.OS.OsGetByIdUseCase.OsGetByIdUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Os.OsGetByIdUseCase.OsGetByIdUseCase;
 import fernandes.alisson.sosystem.domain.usecases.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

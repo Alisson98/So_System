@@ -1,4 +1,4 @@
-package fernandes.alisson.sosystem.domain.usecases.OS.OsGetByIdUseCase;
+package fernandes.alisson.sosystem.domain.usecases.Os.OsGetByIdUseCase;
 
 import fernandes.alisson.sosystem.domain.model.Os;
 
