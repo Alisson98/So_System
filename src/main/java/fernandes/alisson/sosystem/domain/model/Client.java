@@ -1,5 +1,6 @@
 package fernandes.alisson.sosystem.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -21,7 +22,7 @@ public class Client extends Person implements Serializable {
     public Client(Long id, String name, @CPF String cpf, String phone) {
         super(id, name, cpf, phone);
     }
-
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Os> osList= new ArrayList<>();
 }

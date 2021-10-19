@@ -2,11 +2,11 @@ package fernandes.alisson.sosystem.application.controllers.TechnicianController;
 
 import fernandes.alisson.sosystem.application.dtos.TechnicianDTO;
 import fernandes.alisson.sosystem.domain.model.Technician;
-import fernandes.alisson.sosystem.domain.usecases.Technician.CreateUseCase.CreateUseCase;
-import fernandes.alisson.sosystem.domain.usecases.Technician.DeleteUseCase.DeleteUseCase;
-import fernandes.alisson.sosystem.domain.usecases.Technician.GetAllUseCase.GetAllUseCase;
-import fernandes.alisson.sosystem.domain.usecases.Technician.GetByIdUseCase.GetByIdUseCase;
-import fernandes.alisson.sosystem.domain.usecases.Technician.UpdateUseCase.UpdateUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianCreateUseCase.CreateUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianDeleteUseCase.DeleteUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianGetAllUseCase.GetAllUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianGetByIdUseCase.GetByIdUseCase;
+import fernandes.alisson.sosystem.domain.usecases.Technician.TechnicianUpdateUseCase.UpdateUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
