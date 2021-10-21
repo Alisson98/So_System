@@ -1,6 +1,8 @@
 package fernandes.alisson.sosystem.application.dtos;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import fernandes.alisson.sosystem.domain.model.Os;
+import fernandes.alisson.sosystem.domain.model.enuns.Priority;
+import fernandes.alisson.sosystem.domain.model.enuns.Status;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,5 +42,11 @@ public class OsDTO implements Serializable {
         this.obs = obj.getObs();
         this.technician = obj.getTechnician().getId();
         this.client = obj.getClient().getId();
+    }
+    public Status getStatus(){
+        return Status.toEnum(this.status);
+    }
+    public Priority getPriority(){
+        return Priority.toEnum(this.priority);
     }
 }

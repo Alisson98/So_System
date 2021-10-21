@@ -5,8 +5,6 @@ import fernandes.alisson.sosystem.data.repositories.OsRepository;
 import fernandes.alisson.sosystem.domain.model.Client;
 import fernandes.alisson.sosystem.domain.model.Os;
 import fernandes.alisson.sosystem.domain.model.Technician;
-import fernandes.alisson.sosystem.domain.model.enuns.Priority;
-import fernandes.alisson.sosystem.domain.model.enuns.Status;
 import fernandes.alisson.sosystem.domain.usecases.Client.ClientGetByIdUseCase.ClientGetByIdUseCase;
 import fernandes.alisson.sosystem.domain.usecases.Os.OsUpdateUseCase.OsUpdateUseCase;
 import fernandes.alisson.sosystem.domain.usecases.Os.OsGetByIdUseCase.OsGetByIdUseCase;
@@ -37,8 +35,8 @@ public class OsUpdateUseCaseImpl implements OsUpdateUseCase {
         Os newObj = new Os();
         newObj.setId(objDTO.getId());
         newObj.setObs(objDTO.getObs());
-        newObj.setPriority(Priority.toEnum(objDTO.getPriority()));
-        newObj.setStatus(Status.toEnum(objDTO.getStatus()));
+        newObj.setPriority((objDTO.getPriority()));
+        newObj.setStatus((objDTO.getStatus()));
 
         Technician tec = technicianGetByIdUseCase.execute(objDTO.getTechnician());
         Client cli = clientGetByIdUseCase.execute(objDTO.getClient());
